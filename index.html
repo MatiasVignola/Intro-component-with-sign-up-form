@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> 
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+<body>
+  <main class="main">
+    <section class="title">
+      <h2>Learn to code by watching others</h2>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable.</p>
+    </section>
+    <div class="section2">
+      <section class="try_free">
+        <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+        </section>
+        <section class="form">  
+          <div class="form_content">
+            <form action="">
+              <input type="text" id="firstName" placeholder="First Name">
+                <div class="error_container" id="firstNameError">
+                  <!-- <img src="./images/icon-error.svg" alt="error">
+                  <p>First Name cannot be empty</p> -->
+                </div>
+              <input type="text" id="lastName" placeholder="Last Name">
+              <div class="error_container" id="lastNameError"></div>
+              <input type="email" id="emailAddress" placeholder="Email Address">
+              <div class="error_container" id="emailAddressError"></div>
+              <input type="password" id="password" placeholder="Password">
+              <div class="error_container" id="passwordError"></div>
+              <input type="submit" value="Claim your free trial" id="submit">
+            </form>
+          </div>
+          <p class="terms">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+        </section>
+    </div>
+  </main> 
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/MatiasVignola?tab=repositories">Matias Vignola</a>.
+    </p>
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+</html>
