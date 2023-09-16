@@ -1,51 +1,92 @@
+let errorContainer = document.querySelector('.error_container');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const emailAddress = document.querySelector('#emailAddress');
 const password = document.querySelector('#password');
-
-const firstNameError = document.querySelector('#firstNameErorr');
-const lastNameError = document.querySelector('#lastNameError');
-const emailAddressError = document.querySelector('#emailAddressError');
-const passwordError = document.querySelector('#passwordError');
-
-const button = document.querySelector('#submit');
+const button =document.querySelector('#submit');
 
 button.addEventListener('click', (e)=> {
     e.preventDefault();
-    validateInput(firstName.value, firstName, firstNameError, 'First Name cannot be empty');
-    validateInput(lastName.value, lastName, lastNameError, 'Last Name cannot be empty');
-    validateEmail(emailAddress.value, emailAddress, emailAddressError);
-    validateInput(password.value, password, passwordError, 'Password cannot be empty');
+    validateInput(firstName.value, firstName),
+    validateInput(lastName.value, lastName),
+    validateEmail(emailAddress.value, emailAddress),
+    validateInput(password.value, password)
 });
 
-function validateEmail(valueInput, divInput, divError){
+function validateEmail(valueInput, divInput){
     let regExp = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/;
     if(regExp.test(valueInput) == true){
-        hideError(divInput, divError)
+        hideError(divInput)
     }else{
-        showError(divInput, divError,'Looks like this is not an email')
+        showError(divInput)
     }
 }
 
-function validateInput(valueInput, divInput, divError, nameInput){
+function validateInput(valueInput, divInput){
     if(valueInput.length == 0){
-        showError(divInput, divError, nameInput);
+        showError(divInput);
     }else {
-        hideError(divInput, divError);
+        hideError(divInput);
     }
 }
 
-function showError(divInput, divError, nameInput){
+function showError(divInput){
     divInput.style.border = '1px solid red';
-    // divError.innerHTML = `
-    // <img src="./images/icon-error.svg" alt="error">
-    // <p>${error}</p>
-    // `;
+    errorContainer.style.display = 'flex';
 }
 
-function hideError(divInput, divError){
+function hideError(divInput){
     divInput.style.border = '1px solid hsl(246, 25%, 77%)';
-    // divError.innerHTML = ` `;
+    errorContainer.style.display = 'none';
 }
+
+
+// const firstName = document.querySelector('#firstName');
+// const lastName = document.querySelector('#lastName');
+// const emailAddress = document.querySelector('#emailAddress');
+// const password = document.querySelector('#password');
+
+// const firstNameError = document.querySelector('#firstNameErorr');
+// const lastNameError = document.querySelector('#lastNameError');
+// const emailAddressError = document.querySelector('#emailAddressError');
+// const passwordError = document.querySelector('#passwordError');
+
+// let errorContainer = document.querySelector('.error_container');
+
+// const button = document.querySelector('#submit');
+
+// button.addEventListener('click', (e)=> {
+//     e.preventDefault();
+//     validateInput(firstName.value, firstName, firstNameError);
+//     validateInput(lastName.value, lastName, lastNameError);
+//     validateEmail(emailAddress.value, emailAddress, emailAddressError);
+//     validateInput(password.value, password, passwordError);
+// });
+
+// function validateEmail(valueInput, divInput, divError){
+//     let regExp = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/;
+//     if(regExp.test(valueInput) == true){
+//         hideError(divInput, divError)
+//     }else{
+//         showError(divInput, divError)
+//     }
+// }
+
+// function validateInput(valueInput, divInput, divError){
+//     if(valueInput.length == 0){
+//         showError(divInput, divError);
+//     }else {
+//         hideError(divInput, divError);
+//     }
+// }
+
+// function showError(divInput, divError){
+//     divInput.style.border = '1px solid red';
+//     errorContainer.style.display = 'none';
+// }
+
+// function hideError(divInput, divError){
+//     divInput.style.border = '1px solid hsl(246, 25%, 77%)';
+// }
 
 

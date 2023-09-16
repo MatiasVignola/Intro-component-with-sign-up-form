@@ -72,7 +72,7 @@ body{
 }
 .error_container{
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 .error_container img{
